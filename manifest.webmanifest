@@ -1,0 +1,17 @@
+{
+  "name": "Ekadashi Fasting",
+  "short_name": "Ekadashi",
+  "description": "Exact Ekadashi fasting and break-fast (pāraṇā) times for your own location, the full calendar, gentle reminders, and our story & kirtan videos.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFF8EE",
+  "theme_color": "#E8590C",
+  "categories": ["lifestyle", "education"],
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}
