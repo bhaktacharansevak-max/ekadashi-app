@@ -1,5 +1,5 @@
 /* Ekadashi — One Fast Companion · service worker */
-var CACHE = 'ekadashi-v2.1.0';
+var CACHE = 'ekadashi-v2.2.0';
 var ASSETS = ['./', './index.html', './manifest.webmanifest', './version.json',
   './book-cover.jpg', './icon-192.png', './icon-512.png', './icon-512-maskable.png'];
 

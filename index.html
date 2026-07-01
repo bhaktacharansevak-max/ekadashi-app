@@ -49,6 +49,55 @@
   .bookend .s{font-size:12.5px;color:var(--gold);font-weight:800;margin-top:3px}
   .sheet h4{margin:14px 0 4px;color:var(--navy);font-size:15.5px}
   .sheet .step{font-weight:800;color:var(--gold)}
+  /* journey strip (every page) */
+  .jstrip{display:flex;align-items:center;gap:10px;background:linear-gradient(160deg,#fff,#fdf7ea);border:1px solid var(--line);border-radius:14px;padding:10px 13px;margin:12px 0 2px;cursor:pointer;box-shadow:0 4px 12px rgba(20,40,75,.06)}
+  .jstrip .ji{width:34px;height:34px;flex:none;border-radius:10px;background:linear-gradient(160deg,var(--navy2),var(--navy));display:flex;align-items:center;justify-content:center;font-size:17px}
+  .jstrip .jnums{flex:1;display:flex;gap:14px;min-width:0}
+  .jstrip .jn{line-height:1.1}
+  .jstrip .jn b{display:block;font-size:16px;font-weight:800;color:var(--navy)}
+  .jstrip .jn span{font-size:10px;letter-spacing:.4px;text-transform:uppercase;color:var(--muted)}
+  .jstrip .jgo{color:var(--gold);font-weight:800;font-size:12.5px;white-space:nowrap}
+  .jstrip.guest{justify-content:space-between}
+  .jstrip.guest .gtxt{font-weight:800;color:var(--navy);font-size:14px}
+  /* journey page */
+  .jhead{background:linear-gradient(160deg,var(--navy2),var(--navy));color:#fff;border-radius:18px;padding:18px;margin-top:6px;text-align:center;box-shadow:0 8px 22px rgba(20,40,75,.22)}
+  .jhead .h{font-size:20px;font-weight:800}
+  .jhead .row{display:flex;justify-content:center;gap:10px;margin-top:12px}
+  .jhead .b{background:rgba(255,255,255,.12);border:1px solid rgba(224,179,82,.4);border-radius:13px;padding:9px 6px;min-width:78px}
+  .jhead .b .n{font-size:22px;font-weight:800;color:var(--gold2);line-height:1}
+  .jhead .b .u{font-size:9.5px;letter-spacing:.6px;text-transform:uppercase;color:#cfd8ea;margin-top:4px}
+  .jbox{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-top:14px;box-shadow:0 5px 14px rgba(20,40,75,.05)}
+  .jbox h3{margin:0 0 3px;color:var(--navy);font-size:16px}
+  .jbox .sub{font-size:12.5px;color:var(--muted);margin:0 0 12px}
+  .slider{margin:12px 0}
+  .slider .lab{display:flex;justify-content:space-between;font-size:13px;font-weight:700;color:var(--navy);margin-bottom:5px}
+  .slider .lab .v{color:var(--gold)}
+  .slider input[type=range]{width:100%}
+  .jbox textarea{width:100%;font-family:inherit;font-size:14px;padding:11px 12px;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--ink);min-height:74px;resize:vertical}
+  .jbox textarea:focus{outline:none;border-color:var(--gold)}
+  .ladder{display:flex;flex-direction:column;gap:7px;margin-top:6px}
+  .rung{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:11px;border:1px solid var(--line);background:#fff;cursor:pointer}
+  .rung.done{background:#fdf7ea;border-color:var(--gold)}
+  .rung.cur{border-color:var(--navy2);box-shadow:0 0 0 2px rgba(30,58,107,.15)}
+  .rung .num{width:24px;height:24px;flex:none;border-radius:50%;background:var(--line);color:var(--navy);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+  .rung.done .num{background:linear-gradient(160deg,var(--gold2),var(--gold));color:#3a2a08}
+  .rung .rt{flex:1;font-weight:700;color:var(--navy);font-size:14px}
+  .rung .rt small{display:block;font-weight:500;color:var(--muted);font-size:11.5px}
+  .diary{margin-top:8px}
+  .drow{display:flex;gap:11px;padding:11px 2px;border-top:1px solid var(--line)}
+  .drow:first-child{border-top:0}
+  .drow .dd{font-size:11px;color:var(--muted);white-space:nowrap;font-weight:700;min-width:52px}
+  .drow .dc{flex:1}
+  .drow .dc .lv{font-weight:800;color:var(--gold);font-size:12px}
+  .drow .dc .nt{font-size:13.5px;color:var(--ink);margin-top:1px}
+  .miles{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .mile{display:flex;align-items:center;gap:7px;background:#f3f5f9;border:1px solid var(--line);border-radius:20px;padding:6px 12px;font-size:12.5px;font-weight:700;color:var(--muted)}
+  .mile.on{background:#fdf7ea;border-color:var(--gold);color:var(--navy)}
+  .thennow{display:flex;gap:10px;margin-top:10px}
+  .thennow .c{flex:1;background:#fbf3e0;border-radius:12px;padding:11px 10px;text-align:center}
+  .thennow .c .t{font-size:10px;letter-spacing:.6px;text-transform:uppercase;color:var(--gold);font-weight:800}
+  .thennow .c .v{font-size:15px;font-weight:800;color:var(--navy);margin-top:3px}
+  .thennow .c .d{font-size:11px;font-weight:700;margin-top:2px}
   .logo{display:inline-flex;vertical-align:-5px;margin-right:7px}
   h2.sec{font-size:13px;letter-spacing:1.2px;text-transform:uppercase;color:var(--gold);font-weight:800;margin:20px 6px 10px}
   /* dashboard */
@@ -190,6 +239,8 @@
 
 <div class="wrap">
 
+  <div class="jstrip" id="jstrip" onclick="showPane('Journey')"></div>
+
   <!-- ===== HOME (dashboard) ===== -->
   <section class="pane" id="paneHome">
     <div class="greet" id="greet">Welcome 🙏</div>
@@ -299,12 +350,82 @@
     </footer>
   </section>
 
+  <!-- ===== JOURNEY ===== -->
+  <section class="pane" id="paneJourney" style="display:none">
+    <div class="jhead">
+      <div class="h" id="jGreet">Your journey</div>
+      <div class="row">
+        <div class="b"><div class="n" id="jFasts">0</div><div class="u">Fasts kept</div></div>
+        <div class="b"><div class="n" id="jLevel">—</div><div class="u">Level</div></div>
+        <div class="b"><div class="n" id="jBook">0%</div><div class="u">Book read</div></div>
+      </div>
+    </div>
+
+    <div class="jbox" id="jOnboard" style="display:none">
+      <h3>🙏 Have you kept Ekadashi before?</h3>
+      <p class="sub">So we honour the fasts you have already kept — you are no beginner.</p>
+      <div class="slider"><div class="lab"><span>Years you have practised</span><span class="v" id="jYrsV">0</span></div><input type="range" id="jYrs" min="0" max="40" step="1" value="0"></div>
+      <div id="jYrsNote" class="sub" style="margin:0 0 10px">New to Ekadashi? That is perfectly good — begin today.</div>
+      <button class="btn primary" onclick="saveYears()">Set my starting count</button>
+    </div>
+
+    <div class="jbox" id="jBaseline">
+      <h3>🪔 Where you begin today</h3>
+      <p class="sub">A quiet snapshot of this moment. Later, you will look back and see how far you have come.</p>
+      <div id="jBaseSliders"></div>
+      <textarea id="jBaseText" placeholder="In your own words — your health, your mind, your heart, your situation today. (Private to you.)"></textarea>
+      <button class="btn primary" style="margin-top:10px" onclick="saveBaseline()">Save my starting point</button>
+      <div id="jBaseMsg" class="sub" style="text-align:center;margin-top:8px"></div>
+    </div>
+
+    <div class="jbox" id="jNow" style="display:none">
+      <h3>🌤️ How are you now?</h3>
+      <p class="sub">Rate the same four again, whenever you wish, and see your growth — then and now.</p>
+      <div id="jNowSliders"></div>
+      <button class="btn navy" style="margin-top:10px" onclick="saveNow()">Save today's check-in</button>
+      <div id="jThenNow"></div>
+    </div>
+
+    <div class="jbox">
+      <h3>🪜 The levels of the fast</h3>
+      <p class="sub">Keep the level your body allows — the lowest kept in love outshines the highest kept in harm.</p>
+      <div class="ladder" id="jLadder"></div>
+    </div>
+
+    <div class="jbox">
+      <h3>📿 Your fasts</h3>
+      <p class="sub">After each Ekadashi, note how it went. Reading them back gives strength for the next.</p>
+      <button class="btn primary" onclick="openLogFast()">＋ Log a fast I kept</button>
+      <div class="diary" id="jDiary"></div>
+    </div>
+
+    <div class="jbox">
+      <h3>🏅 Milestones</h3>
+      <p class="sub">Small honours along the way.</p>
+      <div class="miles" id="jMiles"></div>
+    </div>
+  </section>
+
+</div>
+
+<div class="modal" id="logModal" onclick="if(event.target===this)closeLogFast()">
+  <div class="sheet">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+      <h3>📿 Log a fast you kept</h3>
+      <button class="xbtn" onclick="closeLogFast()">✕</button>
+    </div>
+    <p class="sub" style="color:var(--muted);font-size:13px;margin:0 0 8px">Which level did you keep?</p>
+    <div class="ladder" id="logLadder"></div>
+    <textarea id="logNote" placeholder="A line about your experience — how did the day feel? (optional)" style="width:100%;font-family:inherit;font-size:14px;padding:11px 12px;border:1px solid var(--line);border-radius:11px;margin-top:12px;min-height:64px"></textarea>
+    <button class="btn primary" style="margin-top:10px" onclick="saveFast()">Add to my journey</button>
+  </div>
 </div>
 
 <nav class="tabbar">
   <button class="tb on" id="tbHome" onclick="showPane('Home')"><span class="ic">🏠</span>Home</button>
   <button class="tb"    id="tbWatch" onclick="showPane('Watch')"><span class="ic">▶️</span>Watch</button>
   <button class="tb"    id="tbCal"   onclick="showPane('Cal')"><span class="ic">📅</span>Dates</button>
+  <button class="tb"    id="tbJourney" onclick="showPane('Journey')"><span class="ic">🌙</span>Journey</button>
 </nav>
 
 <!-- location picker -->
@@ -412,7 +533,7 @@
 </div>
 
 <script>
-var APP_VERSION="2.1.0";
+var APP_VERSION="2.2.0";
 /* ============= EDIT HERE ============= */
 /* Auto-latest: each channel's UPLOADS playlist (UU..) always starts with the newest upload. */
 var LATEST=[
@@ -534,11 +655,13 @@ function paranaText(ek,loc){
 }
 
 function showPane(p){
-  ["Home","Watch","Cal"].forEach(function(x){document.getElementById("pane"+x).style.display=(x===p)?"block":"none";});
+  ["Home","Watch","Cal","Journey"].forEach(function(x){document.getElementById("pane"+x).style.display=(x===p)?"block":"none";});
   document.getElementById("tbHome").classList.toggle("on",p==="Home");
   document.getElementById("tbWatch").classList.toggle("on",p==="Watch");
   document.getElementById("tbCal").classList.toggle("on",p==="Cal");
+  document.getElementById("tbJourney").classList.toggle("on",p==="Journey");
   if(p==="Watch"&&curLatest<0)loadLatest(0);
+  if(p==="Journey")renderJourney();
   window.scrollTo({top:0,behavior:"smooth"});
 }
 
@@ -750,7 +873,7 @@ document.getElementById('joinForm').addEventListener('submit',function(ev){
   btn.disabled=true; msg.textContent='Creating your space…';
   fetch(SCRIPT_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({name:name,email:email,mobile:mobile,source:'ekadashi-app'})})
     .then(function(r){return r.json();}).then(thanks).catch(thanks);
-  function thanks(){setGreet();buildMenu();document.getElementById('joinCard').innerHTML='<div class="jt">🪔 Your free space is ready</div><div class="jsub" style="margin-bottom:0">Thank you'+(name?', '+name:'')+'. Your place stays saved for you, and we will gently keep you posted before each fast. 🙏</div>';}
+  function thanks(){setGreet();buildMenu();renderStrip();document.getElementById('joinCard').innerHTML='<div class="jt">🪔 Your free space is ready</div><div class="jsub" style="margin-bottom:0">Thank you'+(name?', '+name:'')+'. Your place stays saved for you, and we will gently keep you posted before each fast. 🙏</div>';}
 });
 
 /* ---- update mechanism ---- */
@@ -771,9 +894,110 @@ function doUpdate(){
   }catch(e){done();}
 }
 
+/* ---- journey (device-local for now; cloud sync arrives with the shared login) ---- */
+var LEVELS=[
+  {t:"Non-grain day",s:"Eat as usual, no grains or beans"},
+  {t:"Once a day",s:"A single grain-free meal"},
+  {t:"Fruits only",s:"Fruit and roots, no grains"},
+  {t:"Milk only",s:"Milk and liquids"},
+  {t:"Water only",s:"Only water through the day"},
+  {t:"Waterless (nirjalā)",s:"No food, no water — the strictest"}
+];
+var DIMS=[{k:"peace",label:"Peace of mind"},{k:"health",label:"Health of body"},{k:"control",label:"Self-control"},{k:"near",label:"Nearness to God"}];
+var MILES=[{n:1,t:"First fast"},{n:3,t:"Steady · 3"},{n:11,t:"Eleven kept"},{n:24,t:"A full year"},{n:100,t:"A hundred"}];
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function jN(k){var v=parseInt(localStorage.getItem(k),10);return isNaN(v)?0:v;}
+function jS(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+function jObj(k){try{return JSON.parse(localStorage.getItem(k))||null;}catch(e){return null;}}
+function baseFasts(){return jN('ek_j_basefasts');}
+function loggedLog(){return jObj('ek_j_log')||[];}
+function totalFasts(){return baseFasts()+loggedLog().length;}
+function highestLevel(){var v=localStorage.getItem('ek_j_level');return v===null?-1:parseInt(v,10);}
+function bookPct(){return jN('ek_j_bookpct');}
+function levelShort(){return highestLevel()>=0?('L'+(highestLevel()+1)):'—';}
+
+function renderStrip(){
+  var s=document.getElementById('jstrip');if(!s)return;
+  var started=isMember()||totalFasts()>0||jObj('ek_j_base');
+  if(started){s.className='jstrip';
+    s.innerHTML='<div class="ji">🌙</div><div class="jnums">'+
+      '<div class="jn"><b>'+totalFasts()+'</b><span>Fasts</span></div>'+
+      '<div class="jn"><b>'+levelShort()+'</b><span>Level</span></div>'+
+      '<div class="jn"><b>'+bookPct()+'%</b><span>Book</span></div></div>'+
+      '<div class="jgo">My journey ›</div>';
+  } else {s.className='jstrip guest';
+    s.innerHTML='<div class="ji">🌙</div><div class="gtxt">Begin your journey — free</div><div class="jgo">Start ›</div>';
+  }
+}
+function sliderHTML(pfx,vals){
+  return DIMS.map(function(d){var v=(vals&&vals[d.k])||3;
+    return '<div class="slider"><div class="lab"><span>'+d.label+'</span><span class="v" id="'+pfx+d.k+'v">'+v+'</span></div>'+
+      '<input class="rng" type="range" min="1" max="5" step="1" value="'+v+'" id="'+pfx+d.k+'" oninput="document.getElementById(\''+pfx+d.k+'v\').textContent=this.value"></div>';
+  }).join('');
+}
+function updateYrsNote(y){var n=document.getElementById('jYrsNote');if(!n)return;n.textContent=(y<=0)?'New to Ekadashi? That is perfectly good — begin today.':('About '+(y*24)+' fasts already kept — we honour every one. 🙏');}
+function saveYears(){var y=+document.getElementById('jYrs').value;jS('ek_j_years',y);jS('ek_j_basefasts',y*24);jS('ek_j_yrsset','1');renderJourney();}
+function saveBaseline(){var o={text:document.getElementById('jBaseText').value};DIMS.forEach(function(d){o[d.k]=+document.getElementById('b'+d.k).value;});jS('ek_j_base',JSON.stringify(o));document.getElementById('jBaseMsg').textContent='Saved 🙏 — your starting point is kept.';renderJourney();}
+function saveNow(){var o={};DIMS.forEach(function(d){o[d.k]=+document.getElementById('n'+d.k).value;});jS('ek_j_now',JSON.stringify(o));renderThenNow();}
+function renderThenNow(){
+  var base=jObj('ek_j_base'),now=jObj('ek_j_now'),box=document.getElementById('jThenNow');if(!box)return;
+  if(!base||!now){box.innerHTML='';return;}
+  box.innerHTML='<div style="margin-top:14px;font-weight:800;color:var(--navy);font-size:14px;margin-bottom:2px">Then → now</div>'+
+    DIMS.map(function(d){var t=base[d.k]||0,n=now[d.k]||0,dl=n-t,col=dl>0?'#1d9e75':(dl<0?'#c0392b':'#8a8ea6'),arw=dl>0?'▲ +'+dl:(dl<0?'▼ '+dl:'—');
+      return '<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-top:1px solid var(--line);font-size:13.5px"><span style="font-weight:700;color:var(--navy)">'+d.label+'</span><span style="font-weight:800;color:var(--navy)">'+t+' → '+n+' <span style="color:'+col+'">'+arw+'</span></span></div>';
+    }).join('');
+}
+function renderLadder(){
+  var box=document.getElementById('jLadder'),hi=highestLevel();if(!box)return;
+  box.innerHTML=LEVELS.map(function(L,i){var cls='rung'+((hi>=0&&i<=hi)?' done':'')+(i===hi?' cur':'');
+    return '<div class="'+cls+'"><div class="num">'+(i+1)+'</div><div class="rt">'+L.t+'<small>'+L.s+'</small></div>'+(i===hi?'<span class="jgo" style="color:var(--gold)">highest ✓</span>':'')+'</div>';
+  }).join('');
+}
+var logSel=0;
+function openLogFast(){logSel=Math.max(0,highestLevel());renderLogLadder();document.getElementById('logNote').value='';document.getElementById('logModal').classList.add('show');}
+function closeLogFast(){document.getElementById('logModal').classList.remove('show');}
+function renderLogLadder(){
+  document.getElementById('logLadder').innerHTML=LEVELS.map(function(L,i){
+    return '<div class="rung'+(i===logSel?' cur':'')+'" onclick="logSel='+i+';renderLogLadder()"><div class="num">'+(i+1)+'</div><div class="rt">'+L.t+'<small>'+L.s+'</small></div>'+(i===logSel?'<span class="jgo" style="color:var(--navy2)">chosen ✓</span>':'')+'</div>';
+  }).join('');
+}
+function saveFast(){
+  var log=loggedLog(),d=new Date(),ds=d.getDate()+' '+MON[d.getMonth()]+' '+d.getFullYear();
+  log.unshift({date:ds,level:logSel,note:document.getElementById('logNote').value.trim()});
+  jS('ek_j_log',JSON.stringify(log));
+  if(logSel>highestLevel())jS('ek_j_level',logSel);
+  closeLogFast();renderJourney();
+}
+function renderDiary(){
+  var log=loggedLog(),box=document.getElementById('jDiary');if(!box)return;
+  if(!log.length){box.innerHTML='<div class="sub" style="padding:10px 2px">No fasts logged yet. After your next Ekadashi, tap “Log a fast” above.</div>';return;}
+  box.innerHTML=log.map(function(e){return '<div class="drow"><div class="dd">'+e.date+'</div><div class="dc"><div class="lv">'+LEVELS[e.level].t+'</div>'+(e.note?'<div class="nt">'+esc(e.note)+'</div>':'')+'</div></div>';}).join('');
+}
+function renderMiles(){
+  var tot=totalFasts(),nir=highestLevel()>=5,box=document.getElementById('jMiles');if(!box)return;
+  var html=MILES.map(function(m){return '<div class="mile'+(tot>=m.n?' on':'')+'">'+(tot>=m.n?'🪔':'○')+' '+m.t+'</div>';}).join('');
+  html+='<div class="mile'+(nir?' on':'')+'">'+(nir?'🪔':'○')+' First nirjalā</div>';
+  box.innerHTML=html;
+}
+function renderJourney(){
+  document.getElementById('jGreet').textContent=(isMember()&&memberName())?(memberName()+"’s journey"):'Your journey';
+  document.getElementById('jFasts').textContent=totalFasts();
+  document.getElementById('jLevel').textContent=levelShort();
+  document.getElementById('jBook').textContent=bookPct()+'%';
+  var yrsSet=localStorage.getItem('ek_j_yrsset')==='1';
+  document.getElementById('jOnboard').style.display=yrsSet?'none':'block';
+  if(!yrsSet){var y=jN('ek_j_years');var yi=document.getElementById('jYrs');yi.value=y;document.getElementById('jYrsV').textContent=y;updateYrsNote(y);yi.oninput=function(){document.getElementById('jYrsV').textContent=this.value;updateYrsNote(+this.value);};}
+  var base=jObj('ek_j_base');
+  document.getElementById('jBaseline').style.display=base?'none':'block';
+  document.getElementById('jNow').style.display=base?'block':'none';
+  if(!base){document.getElementById('jBaseSliders').innerHTML=sliderHTML('b',{});}
+  else{document.getElementById('jNowSliders').innerHTML=sliderHTML('n',jObj('ek_j_now')||{});renderThenNow();}
+  renderLadder();renderDiary();renderMiles();renderStrip();
+}
+
 /* ---- init ---- */
 document.getElementById('verNum').textContent=APP_VERSION;
-renderLatestSeg(); renderPlaylists(); renderLocBar(); renderNextBand(); renderHero(); renderList(); refreshRemindUI(); maybeNotify(); renderMember(); checkUpdate(false);
+renderLatestSeg(); renderPlaylists(); renderLocBar(); renderNextBand(); renderHero(); renderList(); refreshRemindUI(); maybeNotify(); renderMember(); renderStrip(); checkUpdate(false);
 
 /* ---- PWA service worker ---- */
 if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}
