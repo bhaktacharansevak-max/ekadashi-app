@@ -1,13 +1,13 @@
 {
-  "name": "Ekadashi Fasting",
+  "name": "Ekadashi — One Fast Companion",
   "short_name": "Ekadashi",
-  "description": "Exact Ekadashi fasting and break-fast (pāraṇā) times for your own location, the full calendar, gentle reminders, and our story & kirtan videos.",
+  "description": "Next Ekadashi dates and break-fast (pāraṇā) times for your city, gentle reminders, our latest videos, and the free One Fast book to read or hear.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#FFF8EE",
-  "theme_color": "#E8590C",
+  "background_color": "#14284b",
+  "theme_color": "#14284b",
   "categories": ["lifestyle", "education"],
   "icons": [
     {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
