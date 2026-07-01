@@ -32,6 +32,23 @@
   header .tag{font-size:12.5px;color:#d9e2f2;margin-top:3px;opacity:.92}
   .hdrupd{position:absolute;top:14px;right:14px;z-index:3;background:rgba(255,255,255,.16);border:1px solid rgba(224,179,82,.7);color:#f6e4bb;font-weight:800;font-size:12px;padding:7px 12px;border-radius:20px;cursor:pointer;display:flex;align-items:center;gap:5px}
   .hdrupd:active{transform:scale(.96)}
+  .memberbar{position:relative;margin-top:12px;display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.12);border:1px solid rgba(224,179,82,.5);color:#f6e4bb;font-weight:700;font-size:13px;padding:7px 13px;border-radius:22px;cursor:pointer}
+  .memberbar .chev{font-size:11px;opacity:.85}
+  .membermenu{position:absolute;top:calc(100% + 6px);left:0;z-index:20;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 30px rgba(20,40,75,.3);min-width:214px;overflow:hidden;display:none;text-align:left}
+  .membermenu.show{display:block}
+  .membermenu .mrow{padding:12px 15px;font-size:14px;color:var(--navy);font-weight:700;cursor:pointer;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:9px}
+  .membermenu .mrow:last-child{border-bottom:0}
+  .membermenu .mrow:active{background:var(--cream)}
+  .membermenu .mrow.muted{color:var(--gold);font-weight:800;font-size:11px;letter-spacing:.5px;text-transform:uppercase;cursor:default}
+  .ra{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(160deg,var(--navy2),var(--navy));color:#fff;border:0;border-radius:11px;padding:10px 15px;font-weight:800;font-size:13.5px;cursor:pointer;margin:2px 0 12px}
+  .tabs{display:flex;gap:8px;margin:4px 0 10px}
+  .tabs button{flex:1;border:1px solid var(--line);background:#fff;color:var(--navy);font-weight:800;font-size:14px;padding:11px 0;border-radius:11px;cursor:pointer}
+  .tabs button.on{background:linear-gradient(160deg,var(--navy2),var(--navy));color:#fff;border-color:transparent}
+  .bookend{display:block;margin-top:16px;background:#fdf7ea;border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none}
+  .bookend .t{font-weight:800;color:var(--navy);font-size:14.5px}
+  .bookend .s{font-size:12.5px;color:var(--gold);font-weight:800;margin-top:3px}
+  .sheet h4{margin:14px 0 4px;color:var(--navy);font-size:15.5px}
+  .sheet .step{font-weight:800;color:var(--gold)}
   .logo{display:inline-flex;vertical-align:-5px;margin-right:7px}
   h2.sec{font-size:13px;letter-spacing:1.2px;text-transform:uppercase;color:var(--gold);font-weight:800;margin:20px 6px 10px}
   /* dashboard */
@@ -51,7 +68,7 @@
   .dcard .dt{font-weight:800;color:var(--navy);font-size:15px}
   .dcard .ds{font-size:12px;color:var(--muted);margin-top:2px;line-height:1.4}
   .dcard.book{grid-column:1 / -1;display:flex;gap:14px;align-items:center}
-  .dcard.book img{width:70px;height:105px;object-fit:cover;border-radius:9px;box-shadow:0 5px 14px rgba(20,40,75,.28);flex:none}
+  .dcard.book img{width:96px;height:144px;object-fit:cover;border-radius:10px;box-shadow:0 6px 16px rgba(20,40,75,.3);flex:none}
   .dcard.book .bt{font-weight:800;color:var(--navy);font-size:18px;line-height:1.18}
   .dcard.book .bsub{font-size:11px;color:var(--gold);font-weight:800;letter-spacing:.4px;text-transform:uppercase;margin-top:3px}
   .dcard.book .bs{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.5}
@@ -165,6 +182,10 @@
       <path d="M8 31q14 8 28 0-4 5-14 5T8 31Z" fill="#e0b352"/>
     </svg></span>Watch · Fast · Remember</h1>
   <div class="tag">Your companion to the One Fast book</div>
+  <div class="memberbar" id="memberBar" onclick="toggleMenu(event)">
+    <span id="memberGreet">🙏 Welcome, Guest</span><span class="chev">▾</span>
+    <div class="membermenu" id="memberMenu"></div>
+  </div>
 </header>
 
 <div class="wrap">
@@ -190,10 +211,20 @@
         <div class="dt">Reminders</div>
         <div class="ds">A gentle nudge before every fast</div>
       </a>
-      <a class="dcard" onclick="openWhy()">
-        <div class="di"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e0b352" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+      <a class="dcard" onclick="openBenefits()">
+        <div class="di"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e0b352" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.3 5.6L20 9l-4 3.9 1 5.6-5-3-5 3 1-5.6L4 9l5.7-.4z"/></svg></div>
+        <div class="dt">Benefits of fasting</div>
+        <div class="ds">For the soul and the body</div>
+      </a>
+      <a class="dcard" onclick="openHow()">
+        <div class="di"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e0b352" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1.6 2.4-.8 3.6 0 6 2.4-1 2.4-3.6 0-6Z"/><path d="M5 14q7 4 14 0-2 5-7 5t-7-5Z"/></svg></div>
         <div class="dt">How to fast</div>
-        <div class="ds">The rules, simply — and why</div>
+        <div class="ds">Keep your first fast, simply</div>
+      </a>
+      <a class="dcard" onclick="openWhy()">
+        <div class="di"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e0b352" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .8-1 1.7M12 16.5h.01"/></svg></div>
+        <div class="dt">Common doubts</div>
+        <div class="ds">The usual questions, cleared</div>
       </a>
 
       <a class="dcard book" href="https://justonefast.com" target="_blank" rel="noopener">
@@ -292,10 +323,11 @@
 
 <div class="modal" id="whyModal" onclick="if(event.target===this)closeWhy()">
   <div class="sheet">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-      <h3>🪔 Ekadashi — Rules &amp; Why</h3>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+      <h3>🪔 Common doubts, cleared</h3>
       <button class="xbtn" onclick="closeWhy()">✕</button>
     </div>
+    <button class="ra" onclick="readAloud('whyText',this)">🔊 Read this aloud</button>
     <div id="whyText">
       <p style="font-weight:800;color:var(--navy);margin:6px 0 2px;font-size:15.5px">Why we sometimes fast on Dvādaśī, not Ekādaśī</p>
       <p>A true Ekadashi must be pure — free of any trace of the day before it, Daśamī. If even a little Daśamī is still lingering in the last hour and a half before sunrise, the great teachers tell us that day is "pierced," and we set it aside and fast the next day instead — which the ordinary calendar calls Dvādaśī. We are not skipping Ekadashi; we are keeping it in its pure form. This is the <i>viddhā</i> rule, given in the <i>Hari-bhakti-vilāsa</i>.</p>
@@ -308,12 +340,79 @@
       <p>Breaking the fast has its own right time. It is done the next morning, on Dvādaśī, after sunrise — never while it is still Ekadashi, and never at night. We first let the sacred early portion of Dvādaśī, called Hari-vāsara, pass. The best time is the early morning, the first part of the day, before midday, and before the Dvādaśī itself ends. Because every step of this depends on your sunrise, this app works it out for your own location.</p>
       <p style="color:var(--gold);font-weight:700">When in doubt, follow any local ISKCON temple or Hare Krishna center. Hare Krishna. 🙏</p>
     </div>
-    <button id="readWhy" class="btn navy" style="margin-top:6px">🔊 Read this aloud</button>
+  </div>
+</div>
+
+<div class="modal" id="howModal" onclick="if(event.target===this)closeHow()">
+  <div class="sheet">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+      <h3>🪔 How to keep your first fast</h3>
+      <button class="xbtn" onclick="closeHow()">✕</button>
+    </div>
+    <button class="ra" onclick="readAloud('howText',this)">🔊 Read this aloud</button>
+    <div id="howText">
+      <p>Keeping Ekadashi is simple, and you can begin this very fortnight. Here it is, in five gentle steps.</p>
+      <h4><span class="step">1.</span> Find the next day</h4>
+      <p>You are never more than about two weeks from an Ekadashi. Note just two things — the fast day, and the morning after it. This app shows you both, and quietly reminds you. Do not wait for a perfect beginning; the next Ekadashi is the perfect one, because it is the next one.</p>
+      <h4><span class="step">2.</span> Choose your level</h4>
+      <p>Pick the level your body can truly stand on. If this is your first, begin at the bottom, without shame: the non-grain day — eat much as you normally would, simply leaving out all grains and beans. Nothing more is needed to keep a true Ekadashi. And keep the safeguard in view: if you are unwell, elderly, pregnant, a child, or under medical care, stay gentle, keep your water and fruit, and never strain.</p>
+      <h4><span class="step">3.</span> Set the night before</h4>
+      <p>The fast begins the evening before. On that night (Dashami), eat your last meal light, simple, and grain-free, and finish it before you sleep. You will wake to the fast already begun.</p>
+      <h4><span class="step">4.</span> Keep the day — with both hands</h4>
+      <p>With one hand, hold your level — leave the grains, or take only fruit or water, as you chose. With the other, more important hand, fill the freed hours with God: say His holy name, read a sacred page, pray simply, do a small service. If Hare Krishna is not yours, use the name your own heart trusts. Do not grit your teeth against the hunger — court the nearness instead, and the hunger sinks into the background.</p>
+      <h4><span class="step">5.</span> Break it well, next morning</h4>
+      <p>On the next morning (Dvadashi), break the fast within its proper window — this app shows the time. Break it simply: if you fasted on water, take a little fruit first; if on fruit, return gently to grains. A quiet word of thanks, and the day is sealed. Then, in a fortnight, do it again. Aim only at the next one. Begin imperfectly — but begin.</p>
+    </div>
+    <a class="bookend" href="https://justonefast.com" target="_blank" rel="noopener">
+      <div class="t">📖 Want the full levels, the stories, and the deeper regulations?</div>
+      <div class="s">Read the One Fast book — free ›</div>
+    </a>
+  </div>
+</div>
+
+<div class="modal" id="benModal" onclick="if(event.target===this)closeBen()">
+  <div class="sheet">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+      <h3>🌟 The gifts of one fast</h3>
+      <button class="xbtn" onclick="closeBen()">✕</button>
+    </div>
+    <div class="tabs">
+      <button id="tabSpir" class="on" onclick="benTab('spir')">🙏 For the soul</button>
+      <button id="tabSci" onclick="benTab('sci')">🔬 For the body</button>
+    </div>
+    <button class="ra" onclick="readAloud(benCur==='spir'?'benSpir':'benSci',this)">🔊 Read this aloud</button>
+    <div id="benSpir">
+      <p>A fast is not won by an empty stomach. It is won by a full heart. Clearing the plate only makes room; room filled with God is the thing itself. This is what that room fills with.</p>
+      <h4>A stiller mind</h4>
+      <p>On a day when the body is light and the senses are reined in, the endless inner noise drops a little, and a peace you had forgotten begins to show through.</p>
+      <h4>A new freedom</h4>
+      <p>Every time you say "not today" to the body's demand, you learn in your own bones that you are not your appetites — you are the one who can say no to them. That freedom quietly spreads into every corner of life.</p>
+      <h4>A lighter load</h4>
+      <p>The scriptures promise, again and again, that this day steadily lifts the weight of past wrongs — old karma set down. You may never see the ledger, but many who keep the day speak of a real lightness.</p>
+      <h4>Priceless in His eyes</h4>
+      <p>The Lord prices one Ekadashi far beyond all proportion to the small effort it asks. Yet it is a relationship, not a vending machine — keep the day to be near Him, not to extract a prize, and watch the rest quietly follow.</p>
+    </div>
+    <div id="benSci" style="display:none">
+      <p>We will keep this honest — encouragement, never medicine — and never dress a maybe as a fact. Even so, what modern science is finding is remarkable, and it leans toward what the sages said long ago.</p>
+      <h4>"The supreme medicine"</h4>
+      <p>Ayurveda, the ancient science of life, calls fasting the supreme medicine: rest the body, and it heals itself. It rekindles the digestive fire and burns off accumulated toxins.</p>
+      <h4>The body cleans its own house</h4>
+      <p>When food stops for a while, the cell turns inward and clears out its own broken and worn-out parts — a deep self-cleaning called autophagy (a discovery that won a Nobel Prize in 2016). It switches on strongly after the first twelve to twenty-four hours. And the Ekadashi fast spans close to thirty-six hours — the calendar and the microscope agree.</p>
+      <h4>New fire, less rust</h4>
+      <p>Fasting clears worn-out cellular power plants and builds fresh ones; the body relearns to burn its own fat, blood sugar steadies, insulin sensitivity improves, the brain sharpens, and inflammation — the quiet fire beneath many modern diseases — tends to cool.</p>
+      <h4>Longer life (still being proven)</h4>
+      <p>At the very tips of our DNA sit protective caps, the telomeres, tied to the length of our life. In animals, eating less appears to slow their fraying. In humans this is promising but not yet settled — a powerful line of evidence still being tested, which we will not overstate.</p>
+      <p style="color:var(--gold);font-weight:700">All of it bows to one rule: keep the fast by your ability, and never against your health.</p>
+    </div>
+    <a class="bookend" href="https://justonefast.com" target="_blank" rel="noopener">
+      <div class="t">📖 For the full, honest science and the sources</div>
+      <div class="s">Read the One Fast book — free ›</div>
+    </a>
   </div>
 </div>
 
 <script>
-var APP_VERSION="2.0.1";
+var APP_VERSION="2.1.0";
 /* ============= EDIT HERE ============= */
 /* Auto-latest: each channel's UPLOADS playlist (UU..) always starts with the newest upload. */
 var LATEST=[
@@ -570,19 +669,46 @@ function maybeNotify(){
   }
 }
 
-/* ---- why modal + read aloud ---- */
+/* ---- modals + generic read-aloud ---- */
+function stopRead(){if("speechSynthesis" in window)speechSynthesis.cancel();document.querySelectorAll(".ra").forEach(function(b){b.innerHTML="🔊 Read this aloud";});}
+function readAloud(id,btn){
+  if(!("speechSynthesis" in window)){alert("Read-aloud isn't supported in this browser.");return;}
+  if(speechSynthesis.speaking){stopRead();return;}
+  var el=document.getElementById(id);if(!el)return;
+  var parts=el.innerText.split(/(?<=[.!?])\s+/).filter(Boolean),i=0;
+  btn.innerHTML="⏹ Stop reading";
+  (function go(){if(i>=parts.length){stopRead();return;}var u=new SpeechSynthesisUtterance(parts[i]);u.rate=.95;u.onend=function(){i++;go();};speechSynthesis.speak(u);})();
+}
 function openWhy(){document.getElementById("whyModal").classList.add("show");}
-function closeWhy(){document.getElementById("whyModal").classList.remove("show");if("speechSynthesis" in window)speechSynthesis.cancel();var b=document.getElementById("readWhy");if(b)b.textContent="🔊 Read this aloud";}
-(function(){
-  var b=document.getElementById("readWhy");if(!b)return;
-  b.onclick=function(){
-    if(!("speechSynthesis" in window)){alert("Read-aloud isn't supported in this browser.");return;}
-    if(speechSynthesis.speaking){speechSynthesis.cancel();b.textContent="🔊 Read this aloud";return;}
-    var parts=document.getElementById("whyText").innerText.split(/(?<=[.!?])\s+/).filter(Boolean),i=0;
-    b.textContent="⏹ Stop reading";
-    (function go(){if(i>=parts.length){b.textContent="🔊 Read this aloud";return;}var u=new SpeechSynthesisUtterance(parts[i]);u.rate=.95;u.onend=function(){i++;go();};speechSynthesis.speak(u);})();
-  };
-})();
+function closeWhy(){document.getElementById("whyModal").classList.remove("show");stopRead();}
+function openHow(){document.getElementById("howModal").classList.add("show");}
+function closeHow(){document.getElementById("howModal").classList.remove("show");stopRead();}
+var benCur="spir";
+function openBenefits(){benCur="spir";benTab("spir");document.getElementById("benModal").classList.add("show");}
+function closeBen(){document.getElementById("benModal").classList.remove("show");stopRead();}
+function benTab(t){benCur=t;
+  document.getElementById("benSpir").style.display=t==="spir"?"block":"none";
+  document.getElementById("benSci").style.display=t==="sci"?"block":"none";
+  document.getElementById("tabSpir").classList.toggle("on",t==="spir");
+  document.getElementById("tabSci").classList.toggle("on",t==="sci");
+  stopRead();
+}
+
+/* ---- member / login state (persistent until logout, WhatsApp-style) ---- */
+function isMember(){try{return localStorage.getItem("ek_member")==="1";}catch(e){return false;}}
+function memberName(){try{return localStorage.getItem("ek_name")||"";}catch(e){return "";}}
+function setGreet(){document.getElementById("memberGreet").innerHTML=isMember()?("🙏 Welcome"+(memberName()?", "+memberName():"")):"🙏 Welcome, Guest";}
+function buildMenu(){
+  var m=document.getElementById("memberMenu");
+  if(isMember()){m.innerHTML='<div class="mrow muted">🪔 Ekadashi Sevak</div><div class="mrow" onclick="editDetails(event)">✏️ Edit my details</div><div class="mrow" onclick="logout(event)">🚪 Log out</div>';}
+  else{m.innerHTML='<div class="mrow" onclick="guestJoin(event)">🪔 Create your free login</div><div class="mrow" onclick="guestJoin(event)">🔑 Log in</div>';}
+}
+function renderMember(){setGreet();buildMenu();if(isMember()){var jc=document.getElementById("joinCard");if(jc)jc.style.display="none";}}
+function toggleMenu(e){e.stopPropagation();document.getElementById("memberMenu").classList.toggle("show");}
+document.addEventListener("click",function(){var m=document.getElementById("memberMenu");if(m)m.classList.remove("show");});
+function guestJoin(e){e.stopPropagation();document.getElementById("memberMenu").classList.remove("show");showPane("Home");setTimeout(function(){var jc=document.getElementById("joinCard");if(jc){jc.style.display="block";jc.scrollIntoView({behavior:"smooth",block:"center"});var je=document.getElementById("je");if(je)je.focus();}},320);}
+function editDetails(e){e.stopPropagation();document.getElementById("memberMenu").classList.remove("show");alert("Editing your details is coming soon 🙏 — your email login stays the same.");}
+function logout(e){e.stopPropagation();try{localStorage.removeItem("ek_member");localStorage.removeItem("ek_name");}catch(_){}location.reload();}
 
 /* ---- .ics calendar export ---- */
 var SCRIPT_URL="https://script.google.com/macros/s/AKfycbwou749sCStHL5ASKbdY2w_8iFVqLMlwnRzbETVEN_BQJ8OosAA6sUBy0-la73bCyCU4w/exec";
@@ -620,11 +746,11 @@ document.getElementById('joinForm').addEventListener('submit',function(ev){
   name=name.trim();mobile=mobile.trim();
   var msg=document.getElementById('joinMsg'), btn=document.getElementById('sendBtn');
   if(!email||email.indexOf('@')<1){msg.textContent='Please enter a valid email.';return;}
-  try{localStorage.setItem('ek_sevak','1');localStorage.setItem('ek_email',email);}catch(_){}
+  try{localStorage.setItem('ek_sevak','1');localStorage.setItem('ek_member','1');localStorage.setItem('ek_email',email);if(name)localStorage.setItem('ek_name',name);}catch(_){}
   btn.disabled=true; msg.textContent='Creating your space…';
   fetch(SCRIPT_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({name:name,email:email,mobile:mobile,source:'ekadashi-app'})})
     .then(function(r){return r.json();}).then(thanks).catch(thanks);
-  function thanks(){document.getElementById('joinCard').innerHTML='<div class="jt">🪔 Your free space is ready</div><div class="jsub" style="margin-bottom:0">Thank you. We will gently keep you posted before each fast — and your place stays saved for you. 🙏</div>';}
+  function thanks(){setGreet();buildMenu();document.getElementById('joinCard').innerHTML='<div class="jt">🪔 Your free space is ready</div><div class="jsub" style="margin-bottom:0">Thank you'+(name?', '+name:'')+'. Your place stays saved for you, and we will gently keep you posted before each fast. 🙏</div>';}
 });
 
 /* ---- update mechanism ---- */
@@ -647,7 +773,7 @@ function doUpdate(){
 
 /* ---- init ---- */
 document.getElementById('verNum').textContent=APP_VERSION;
-renderLatestSeg(); renderPlaylists(); renderLocBar(); renderNextBand(); renderHero(); renderList(); refreshRemindUI(); maybeNotify(); checkUpdate(false);
+renderLatestSeg(); renderPlaylists(); renderLocBar(); renderNextBand(); renderHero(); renderList(); refreshRemindUI(); maybeNotify(); renderMember(); checkUpdate(false);
 
 /* ---- PWA service worker ---- */
 if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}
