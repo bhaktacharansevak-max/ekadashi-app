@@ -30,6 +30,8 @@
   header .kicker{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold2);font-weight:800}
   header h1{margin:4px 0 0;font-size:20px;font-weight:800;letter-spacing:.2px}
   header .tag{font-size:12.5px;color:#d9e2f2;margin-top:3px;opacity:.92}
+  .hdrupd{position:absolute;top:14px;right:14px;z-index:3;background:rgba(255,255,255,.16);border:1px solid rgba(224,179,82,.7);color:#f6e4bb;font-weight:800;font-size:12px;padding:7px 12px;border-radius:20px;cursor:pointer;display:flex;align-items:center;gap:5px}
+  .hdrupd:active{transform:scale(.96)}
   .logo{display:inline-flex;vertical-align:-5px;margin-right:7px}
   h2.sec{font-size:13px;letter-spacing:1.2px;text-transform:uppercase;color:var(--gold);font-weight:800;margin:20px 6px 10px}
   /* dashboard */
@@ -49,10 +51,11 @@
   .dcard .dt{font-weight:800;color:var(--navy);font-size:15px}
   .dcard .ds{font-size:12px;color:var(--muted);margin-top:2px;line-height:1.4}
   .dcard.book{grid-column:1 / -1;display:flex;gap:14px;align-items:center}
-  .dcard.book img{width:58px;height:87px;object-fit:cover;border-radius:8px;box-shadow:0 4px 12px rgba(20,40,75,.25);flex:none}
-  .dcard.book .bt{font-weight:800;color:var(--navy);font-size:15.5px}
-  .dcard.book .bs{font-size:12.5px;color:var(--muted);margin-top:3px}
-  .dcard.book .go{color:var(--gold);font-weight:800;font-size:12.5px;margin-top:7px}
+  .dcard.book img{width:70px;height:105px;object-fit:cover;border-radius:9px;box-shadow:0 5px 14px rgba(20,40,75,.28);flex:none}
+  .dcard.book .bt{font-weight:800;color:var(--navy);font-size:18px;line-height:1.18}
+  .dcard.book .bsub{font-size:11px;color:var(--gold);font-weight:800;letter-spacing:.4px;text-transform:uppercase;margin-top:3px}
+  .dcard.book .bs{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.5}
+  .dcard.book .go{color:var(--gold);font-weight:800;font-size:13px;margin-top:8px}
   /* signup card */
   .join{grid-column:1 / -1;background:linear-gradient(160deg,#fff,#fdf7ea);border:1px solid var(--line);border-radius:16px;padding:16px 16px 15px;box-shadow:0 5px 14px rgba(20,40,75,.06)}
   .join .jt{font-weight:800;color:var(--navy);font-size:16px}
@@ -153,6 +156,7 @@
   <div class="moon">
     <svg width="120" height="120" viewBox="0 0 100 100"><path d="M62 12a40 40 0 1 0 26 63A32 32 0 1 1 62 12Z" fill="#e0b352"/></svg>
   </div>
+  <button class="hdrupd" onclick="doUpdate()" title="Get the latest version">⟳ Update</button>
   <div class="kicker">Ekadashi · One Fast</div>
   <h1><span class="logo">
     <svg width="26" height="26" viewBox="0 0 44 44" aria-hidden="true">
@@ -195,9 +199,10 @@
       <a class="dcard book" href="https://justonefast.com" target="_blank" rel="noopener">
         <img src="book-cover.jpg" alt="One Fast book cover">
         <div>
-          <div class="bt">📖 Read or hear the book — free</div>
-          <div class="bs">The whole One Fast book — read it, or listen, at your own pace.</div>
-          <div class="go">Open the book ›</div>
+          <div class="bt">One Fast Can Change Your Life</div>
+          <div class="bsub">The one day to reset your life</div>
+          <div class="bs">One quiet day, on the eleventh moon, that renews the body and lifts the heart. Read it or hear it, free, in your own time.</div>
+          <div class="go">📖 Read or listen — free ›</div>
         </div>
       </a>
 
@@ -301,14 +306,14 @@
       <p>Ekadashi is a phase of the moon, not a fixed square on the ordinary calendar, so it shifts from year to year. And whether a moon-day counts for you depends on your own sunrise — which is why the very same Ekadashi can be today in Bengaluru and tomorrow in Vṛndāvan. It is never an error, only the local sunrise. Always follow the date for your own place.</p>
       <p style="font-weight:800;color:var(--navy);margin:14px 0 2px;font-size:15.5px">Breaking the fast — the Pāraṇā</p>
       <p>Breaking the fast has its own right time. It is done the next morning, on Dvādaśī, after sunrise — never while it is still Ekadashi, and never at night. We first let the sacred early portion of Dvādaśī, called Hari-vāsara, pass. The best time is the early morning, the first part of the day, before midday, and before the Dvādaśī itself ends. Because every step of this depends on your sunrise, this app works it out for your own location.</p>
-      <p style="color:var(--gold);font-weight:700">When in doubt, follow your local ISKCON temple. Hare Krishna. 🙏</p>
+      <p style="color:var(--gold);font-weight:700">When in doubt, follow any local ISKCON temple or Hare Krishna center. Hare Krishna. 🙏</p>
     </div>
     <button id="readWhy" class="btn navy" style="margin-top:6px">🔊 Read this aloud</button>
   </div>
 </div>
 
 <script>
-var APP_VERSION="2.0.0";
+var APP_VERSION="2.0.1";
 /* ============= EDIT HERE ============= */
 /* Auto-latest: each channel's UPLOADS playlist (UU..) always starts with the newest upload. */
 var LATEST=[
