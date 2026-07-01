@@ -117,11 +117,13 @@
   .dcard .dt{font-weight:800;color:var(--navy);font-size:15px}
   .dcard .ds{font-size:12px;color:var(--muted);margin-top:2px;line-height:1.4}
   .dcard.book{grid-column:1 / -1;display:flex;gap:14px;align-items:center}
-  .dcard.book img{width:96px;height:144px;object-fit:cover;border-radius:10px;box-shadow:0 6px 16px rgba(20,40,75,.3);flex:none}
-  .dcard.book .bt{font-weight:800;color:var(--navy);font-size:18px;line-height:1.18}
-  .dcard.book .bsub{font-size:11px;color:var(--gold);font-weight:800;letter-spacing:.4px;text-transform:uppercase;margin-top:3px}
-  .dcard.book .bs{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.5}
-  .dcard.book .go{color:var(--gold);font-weight:800;font-size:13px;margin-top:8px}
+  .dcard.book img{width:192px;height:288px;object-fit:cover;border-radius:11px;box-shadow:0 7px 18px rgba(20,40,75,.32);flex:none}
+  .dcard.book .bkick{font-size:10.5px;color:var(--gold);font-weight:800;letter-spacing:.5px;text-transform:uppercase}
+  .dcard.book .bt{font-weight:800;color:var(--navy);font-size:19px;line-height:1.16;margin-top:3px}
+  .dcard.book .bsub{font-size:11px;color:var(--gold);font-weight:800;letter-spacing:.4px;text-transform:uppercase;margin-top:4px}
+  .dcard.book .bs{font-size:13px;color:var(--muted);margin-top:8px;line-height:1.55}
+  .dcard.book .go{color:var(--gold);font-weight:800;font-size:13.5px;margin-top:10px}
+  @media(max-width:430px){.dcard.book img{width:150px;height:225px}}
   /* signup card */
   .join{grid-column:1 / -1;background:linear-gradient(160deg,#fff,#fdf7ea);border:1px solid var(--line);border-radius:16px;padding:16px 16px 15px;box-shadow:0 5px 14px rgba(20,40,75,.06)}
   .join .jt{font-weight:800;color:var(--navy);font-size:16px}
@@ -281,10 +283,11 @@
       <a class="dcard book" href="https://justonefast.com" target="_blank" rel="noopener">
         <img src="book-cover.jpg" alt="One Fast book cover">
         <div>
+          <div class="bkick">📖 The book behind this app</div>
           <div class="bt">One Fast Can Change Your Life</div>
           <div class="bsub">The one day to reset your life</div>
-          <div class="bs">One quiet day, on the eleventh moon, that renews the body and lifts the heart. Read it or hear it, free, in your own time.</div>
-          <div class="go">📖 Read or listen — free ›</div>
+          <div class="bs">Not a diet. Not a wish. One honest day, on the eleventh moon, that clears the body and lifts the heart — what the ancients knew, and science is only now proving.</div>
+          <div class="go">📖 Read or listen to the whole book — free ›</div>
         </div>
       </a>
 
@@ -533,7 +536,7 @@
 </div>
 
 <script>
-var APP_VERSION="2.2.0";
+var APP_VERSION="2.2.1";
 /* ============= EDIT HERE ============= */
 /* Auto-latest: each channel's UPLOADS playlist (UU..) always starts with the newest upload. */
 var LATEST=[
